@@ -1,15 +1,19 @@
 /*
  * @Author: zxy
  * @Date: 2022-04-07 17:11:42
- * @LastEditTime: 2022-04-07 17:19:27
+ * @LastEditTime: 2022-04-07 17:26:06
  * @FilePath: /ts-with-react/src/components/LikeButton.tsx
  */
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const LikeButton: React.FC = () => {
   const [obj, setObj] = useState({
     like: 0,
     on: true
+  })
+
+  useEffect(() => {
+    document.title = `点击了 ${obj.like} 次`
   })
 
   return (

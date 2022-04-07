@@ -1,7 +1,7 @@
 /*
  * @Author: zxy
  * @Date: 2022-04-07 16:49:11
- * @LastEditTime: 2022-04-07 17:14:47
+ * @LastEditTime: 2022-04-07 17:31:50
  * @FilePath: /ts-with-react/src/App.tsx
  */
 import React from 'react';
@@ -9,6 +9,7 @@ import logo from './logo.svg';
 import './App.css';
 import Hello from './components/Hello';
 import LikeButton from './components/LikeButton';
+import MouseTracker from './components/MouseTracker';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
 
         <Hello msg={'Hello Word 2'}></Hello>
         <LikeButton></LikeButton>
+        <MouseTracker></MouseTracker>
         <a
           className="App-link"
           href="https://reactjs.org"
