@@ -1,6 +1,14 @@
+/*
+ * @Author: zxy
+ * @Date: 2022-04-07 16:49:11
+ * @LastEditTime: 2022-04-07 17:14:47
+ * @FilePath: /ts-with-react/src/App.tsx
+ */
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Hello from './components/Hello';
+import LikeButton from './components/LikeButton';
 
 function App() {
   return (
@@ -10,6 +18,9 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
+
+        <Hello msg={'Hello Word 2'}></Hello>
+        <LikeButton></LikeButton>
         <a
           className="App-link"
           href="https://reactjs.org"
