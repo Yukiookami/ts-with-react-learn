@@ -1,7 +1,7 @@
 /*
  * @Author: zxy
  * @Date: 2022-04-07 16:49:11
- * @LastEditTime: 2022-04-07 18:30:41
+ * @LastEditTime: 2022-04-08 19:28:25
  * @FilePath: /ts-with-react/src/App.tsx
  */
 import React, { useState } from 'react';
@@ -10,9 +10,11 @@ import './App.css';
 import Hello from './components/Hello';
 import LikeButton from './components/LikeButton';
 import MouseTracker from './components/MouseTracker';
+import useMousePos from './hooks/useMousePos';
 
 function App() {
   const [show, setShow] = useState(true)
+  const pos = useMousePos()
 
   return (
     <div className="App">
@@ -23,6 +25,7 @@ function App() {
         </p>
 
         <Hello msg={'Hello Word 2'}></Hello>
+        <p>X: {pos.x}, Y: {pos.y}</p>
         <LikeButton></LikeButton>
         <button onClick={() => setShow(!show)}>changeShow</button>
         {show && <MouseTracker></MouseTracker>}
