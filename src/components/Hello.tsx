@@ -1,17 +1,25 @@
 /*
  * @Author: zxy
  * @Date: 2022-04-07 16:57:13
- * @LastEditTime: 2022-04-07 17:03:29
+ * @LastEditTime: 2022-04-09 15:38:26
  * @FilePath: /ts-with-react/src/components/Hello.tsx
  */
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../App";
 
 interface IHelloProps {
   msg?: string
 }
 
 const Hello: React.FC<IHelloProps> = (props) => {
-  return <h2>{props.msg}</h2>
+  const theme = useContext(ThemeContext)
+
+  const style = {
+    color: theme.color,
+    backgroundColor: theme.background
+  }
+
+  return <h2 style={style}>{props.msg}</h2>
 } 
 
 Hello.defaultProps = {

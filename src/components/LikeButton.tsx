@@ -1,11 +1,12 @@
 /*
  * @Author: zxy
  * @Date: 2022-04-07 17:11:42
- * @LastEditTime: 2022-04-08 20:42:09
+ * @LastEditTime: 2022-04-09 15:32:39
  * @FilePath: /ts-with-react/src/components/LikeButton.tsx
  */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import useMousePos from "../hooks/useMousePos";
+import { ThemeContext } from "../App";
 
 const LikeButton: React.FC = () => {
   const [obj, setObj] = useState({
@@ -15,6 +16,12 @@ const LikeButton: React.FC = () => {
 
   const refLike = useRef(0)
   const domRef = useRef<HTMLInputElement>(null)
+  const theme = useContext(ThemeContext)
+
+  const style = {
+    color: theme.color,
+    backgroundColor: theme.background
+  }
 
   const pos = useMousePos()
 
@@ -42,7 +49,9 @@ const LikeButton: React.FC = () => {
     <>
       <input type="text" ref={domRef}></input>
       <h2>likeButton: X: {pos.x} Y: {pos.y}</h2>
-      <button onClick={() => {
+      <button 
+        style={style}
+        onClick={() => {
         setObj({...obj, like: obj.like + 1})
         refLike.current++
       }}>
